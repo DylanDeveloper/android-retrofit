@@ -1,6 +1,6 @@
 package app.dgandroid.eu.androidretrofit.Rest;
 
-import app.dgandroid.eu.androidretrofit.Utils.ConfigurationConstants;
+import app.dgandroid.eu.androidretrofit.Utils.Config;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -15,7 +15,7 @@ public class Client {
     public static Retrofit getClient() {
         if (retrofit==null) {
             retrofit = new Retrofit.Builder()
-                    .baseUrl(ConfigurationConstants.URL)
+                    .baseUrl(Config.URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
