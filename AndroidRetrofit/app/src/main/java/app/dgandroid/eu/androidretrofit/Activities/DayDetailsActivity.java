@@ -4,8 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import app.dgandroid.eu.androidretrofit.Model.Day;
 import app.dgandroid.eu.androidretrofit.R;
 import app.dgandroid.eu.androidretrofit.Utils.Utility;
@@ -17,6 +17,7 @@ public class DayDetailsActivity extends AppCompatActivity {
     private ImageView imageDay;
     private Day day;
     private Intent intentExtra;
+    LinearLayout background;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class DayDetailsActivity extends AppCompatActivity {
         clouds      = (TextView) findViewById(R.id.clouds);
         speed       = (TextView) findViewById(R.id.speed);
         imageDay    = (ImageView) findViewById(R.id.imageDay);
+        background  = (LinearLayout) findViewById(R.id.background);
 
         intentExtra = getIntent();
         this.day = (Day) intentExtra.getSerializableExtra("day");
@@ -53,5 +55,6 @@ public class DayDetailsActivity extends AppCompatActivity {
         dayNumber.setText(dateDayNumber);
         dayText.setText(dateDayText);
         monthText.setText(monthDayText);
+        background.setBackground(Utility.getWeatherConditionBackground(this, day.getWeathers().get(0).getMain())); //Just for Testing
     }
 }
