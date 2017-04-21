@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private String CITY = "Saint Petersburg";
+    private String UNIT_TYPE = "metric"; //CELSIUS TYPE
+    //Fahrenheit use UNIT_TYPE = "imperial"
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         ApiInterface apiInterface = Client.getClient().create(ApiInterface.class);
-        Call<WeatherResponse> call = apiInterface.getWeatherDays(CITY, Config.DAYS, Config.APP_KEY);
+        Call<WeatherResponse> call = apiInterface.getWeatherDays(CITY, Config.DAYS, UNIT_TYPE, Config.APP_KEY);
         setTitle("7 Days Weather in " + CITY);
         call.enqueue(new Callback<WeatherResponse>() {
             @Override

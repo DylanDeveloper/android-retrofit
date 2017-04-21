@@ -11,5 +11,6 @@ import retrofit2.http.Query;
 
 public interface ApiInterface {
     @GET("daily?")
-    Call<WeatherResponse> getWeatherDays(@Query("q") String city, @Query("cnt") String countDays, @Query("APPID") String appID);
+    //http://api.openweathermap.org/data/2.5/forecast/daily?q=Palermo,it&cnt=8&APPID=b241c825823611967aaaa82711951620
+    Call<WeatherResponse> getWeatherDays(@Query("q") String city, @Query("cnt") String countDays, @Query("units") String unitType , @Query("APPID") String appID);
 }

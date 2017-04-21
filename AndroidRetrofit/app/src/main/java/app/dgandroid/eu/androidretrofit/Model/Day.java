@@ -1,17 +1,21 @@
 package app.dgandroid.eu.androidretrofit.Model;
 
 import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by Duilio on 20/04/2017.
  */
 
-public class Day {
+public class Day implements Serializable {
     @SerializedName("weather")
     private List<Weather> weathers;
+    @SerializedName("temp")
+    private Temperature temperatures;
     @SerializedName("dt")
-    private int dt;
+    private long dt;
     @SerializedName("pressure")
     private float pressure;
     @SerializedName("humidity")
@@ -23,14 +27,23 @@ public class Day {
     @SerializedName("clouds")
     private int clouds;
 
-    public Day(List<Weather> weathers, int dt, float pressure, int humidity, float speed, int deg, int clouds){
-        this.weathers   = weathers;
-        this.dt         = dt;
-        this.deg        = deg;
-        this.pressure   = pressure;
-        this.humidity   = humidity;
-        this.speed      = speed;
-        this.clouds     = clouds;
+    public Day(List<Weather> weathers, Temperature temperatures, long dt, float pressure, int humidity, float speed, int deg, int clouds){
+        this.weathers       = weathers;
+        this.temperatures   = temperatures;
+        this.dt             = dt;
+        this.deg            = deg;
+        this.pressure       = pressure;
+        this.humidity       = humidity;
+        this.speed          = speed;
+        this.clouds         = clouds;
+    }
+
+    public Temperature getTemperatures() {
+        return temperatures;
+    }
+
+    public void setTemperatures(Temperature temperatures) {
+        this.temperatures = temperatures;
     }
 
     public List<Weather> getWeathers() {
@@ -73,11 +86,11 @@ public class Day {
         this.deg = deg;
     }
 
-    public int getDt() {
+    public long getDt() {
         return dt;
     }
 
-    public void setDt(int dt) {
+    public void setDt(long dt) {
         this.dt = dt;
     }
 

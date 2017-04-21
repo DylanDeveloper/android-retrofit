@@ -1,6 +1,7 @@
 package app.dgandroid.eu.androidretrofit.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.List;
+import app.dgandroid.eu.androidretrofit.Activities.DayDetailsActivity;
 import app.dgandroid.eu.androidretrofit.Model.Day;
 import app.dgandroid.eu.androidretrofit.R;
 import app.dgandroid.eu.androidretrofit.Utils.Utility;
@@ -30,13 +32,31 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
     }
 
     @Override
+    public void onBindViewHolder(final WeatherViewHolder holder, final int position, List<Object> payloads) {
+        super.onBindViewHolder(holder, position, payloads);
+        holder.itemView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, DayDetailsActivity.class);
+                Day day = days.get(position);
+                intent.putExtra("day", day);
+                context.startActivity(intent);
+            }
+        });
+    }
+
+    @Override
     public void onBindViewHolder(WeatherViewHolder holder, int position) {
+        int max                 = (int)days.get(position).getTemperatures().getMax();
+        int min                 = (int)days.get(position).getTemperatures().getMin();
+        String dateDayNumber    = Utility.getTypeDateUnit(days.get(position).getDt(), Utility.DAY_NUMBER);
+        String dateDayText      = Utility.getTypeDateUnit(days.get(position).getDt(), Utility.DAY_TEXT);
+        holder.dayNumber.setText(dateDayNumber);
+        holder.dayText.setText(dateDayText);
+        holder.tempMax.setText("Max: "+max);
+        holder.tempMin.setText("Min: "+min);
         holder.main.setText(days.get(position).getWeathers().get(0).getMain());
-        holder.description.setText(days.get(position).getWeathers().get(0).getDescription());
         holder.icon.setImageDrawable(Utility.getIcon(context, days.get(position).getWeathers().get(0).getIcon()));
-        holder.clouds.setText("Clouds: "+days.get(position).getClouds());
-        holder.humidity.setText("Humidity: "+days.get(position).getHumidity());
-        holder.speed.setText("Speed: "+days.get(position).getSpeed());
     }
 
     @Override
@@ -48,21 +68,21 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
 
         LinearLayout weatherLayout;
         TextView main;
-        TextView description;
-        TextView clouds;
-        TextView speed;
         ImageView icon;
-        TextView humidity;
+        TextView tempMax;
+        TextView tempMin;
+        TextView dayNumber;
+        TextView dayText;
 
         public WeatherViewHolder(View itemView) {
             super(itemView);
             weatherLayout   = (LinearLayout) itemView.findViewById(R.id.weather_layout);
             main            = (TextView) itemView.findViewById(R.id.main);
-            description     = (TextView) itemView.findViewById(R.id.description);
             icon            = (ImageView) itemView.findViewById(R.id.icon);
-            clouds          = (TextView) itemView.findViewById(R.id.clouds);
-            speed           = (TextView) itemView.findViewById(R.id.speed);
-            humidity        = (TextView) itemView.findViewById(R.id.humidity);
+            tempMax         = (TextView) itemView.findViewById(R.id.temp_max);
+            tempMin         = (TextView) itemView.findViewById(R.id.temp_min);
+            dayNumber       = (TextView) itemView.findViewById(R.id.dayNumber);
+            dayText         = (TextView) itemView.findViewById(R.id.dayText);
         }
     }
 

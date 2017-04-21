@@ -12,13 +12,6 @@ public class WeatherResponse {
     private List<Day> listDays;
     @SerializedName("message")
     private String message;
-    //"city":{},
-    //"cod":"200",
-    //"message":0.264864,
-    //"cnt":8,
-    //"list":[]
-
-    //http://api.openweathermap.org/data/2.5/forecast/daily?q=Palermo,it&cnt=8&APPID=b241c825823611967aaaa82711951620
 
     public String getMessage() {
         return message;

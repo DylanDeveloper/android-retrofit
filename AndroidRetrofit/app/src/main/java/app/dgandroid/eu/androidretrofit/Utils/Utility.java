@@ -2,12 +2,19 @@ package app.dgandroid.eu.androidretrofit.Utils;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import java.util.Date;
 
 /**
  * Created by Duilio on 20/04/2017.
  */
 
 public class Utility {
+    //Mon Apr 24 11:00:00 GMT+02:00 2017
+    public static int DAY_TEXT      = 0;
+    public static int MONTH_TEXT    = 1;
+    public static int DAY_NUMBER    = 2;
+    public static int YEAR_NUMBER   = 5;
+
     public static String[] icons =
             {       "01d"
                     ,"02d"
@@ -42,5 +49,12 @@ public class Utility {
         resourceId = context.getResources().getIdentifier("a03d", "drawable", context.getPackageName());
         drawable = context.getResources().getDrawable(resourceId);
         return drawable;
+    }
+
+    public static String getTypeDateUnit(long dateTimeStamp, int TYPE){
+        Date time = new Date(dateTimeStamp*1000);
+        String timeStampString = time.toString();
+        String[] timeStampArrayString = timeStampString.split(" ");
+        return timeStampArrayString[TYPE];
     }
 }

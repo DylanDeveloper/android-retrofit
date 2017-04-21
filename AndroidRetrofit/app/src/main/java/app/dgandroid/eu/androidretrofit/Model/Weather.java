@@ -2,11 +2,13 @@ package app.dgandroid.eu.androidretrofit.Model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 /**
  * Created by Duilio on 20/04/2017.
  */
 
-public class Weather {
+public class Weather implements Serializable {
     @SerializedName("id")
     private int id;
     @SerializedName("main")
