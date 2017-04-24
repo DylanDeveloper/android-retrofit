@@ -72,54 +72,39 @@ public class Utility {
 
     public static Drawable getWeatherConditionBackground(Context context, String strWeatherCondition){ //Just for Testing
         Logger.i("strWeatherCondition = " + strWeatherCondition);
-        Drawable drawable;
+        Drawable drawable = null;
         int resourceId;
         WeatherCondition weatherCondition = WeatherCondition.valueOf(strWeatherCondition);
         switch (weatherCondition) {
             case Thunderstorm:
-                Logger.i("Thunderstorm");
                 resourceId = context.getResources().getIdentifier("a11n", "drawable", context.getPackageName());
                 drawable = context.getResources().getDrawable(resourceId);
                 break;
             case Drizzle:
-                Logger.i("Drizzle");
-                drawable = null;
                 break;
             case Rain:
-                Logger.i("Rain");
                 resourceId = context.getResources().getIdentifier("a09n", "drawable", context.getPackageName());
                 drawable = context.getResources().getDrawable(resourceId);
                 break;
             case Snow:
-                Logger.i("Snow");
                 resourceId = context.getResources().getIdentifier("a13n", "drawable", context.getPackageName());
                 drawable = context.getResources().getDrawable(resourceId);
                 break;
             case Atmosphere:
-                Logger.i("Atmosphere");
-                drawable = null;
                 break;
             case Clear:
-                Logger.i("Clear");
                 resourceId = context.getResources().getIdentifier("a01d", "drawable", context.getPackageName());
                 drawable = context.getResources().getDrawable(resourceId);
                 break;
             case Clouds:
-                Logger.i("Clouds");
                 resourceId = context.getResources().getIdentifier("a03d", "drawable", context.getPackageName());
                 drawable = context.getResources().getDrawable(resourceId);
                 break;
             case Extreme:
-                Logger.i("Extreme");
-                drawable = null;
                 break;
             case Additional:
-                Logger.i("Additional");
-                drawable = null;
                 break;
             default:
-                Logger.i("default");
-                drawable = null;
                 break;
         }
         if(drawable == null){
