@@ -1,4 +1,4 @@
-package app.dgandroid.eu.androidretrofit.Utils;
+package app.dgandroid.eu.androidretrofit.utils;
 
 import android.util.Log;
 

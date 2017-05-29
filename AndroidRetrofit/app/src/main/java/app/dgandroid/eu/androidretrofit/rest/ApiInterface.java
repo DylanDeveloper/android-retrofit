@@ -1,6 +1,6 @@
-package app.dgandroid.eu.androidretrofit.Rest;
+package app.dgandroid.eu.androidretrofit.rest;
 
-import app.dgandroid.eu.androidretrofit.Model.WeatherResponse;
+import app.dgandroid.eu.androidretrofit.model.WeatherResponse;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;

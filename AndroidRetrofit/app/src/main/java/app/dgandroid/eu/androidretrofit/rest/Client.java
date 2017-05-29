@@ -1,6 +1,6 @@
-package app.dgandroid.eu.androidretrofit.Rest;
+package app.dgandroid.eu.androidretrofit.rest;
 
-import app.dgandroid.eu.androidretrofit.Utils.Config;
+import app.dgandroid.eu.androidretrofit.utils.Config;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 

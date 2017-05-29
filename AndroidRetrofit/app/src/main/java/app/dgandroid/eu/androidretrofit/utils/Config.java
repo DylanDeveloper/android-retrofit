@@ -1,4 +1,4 @@
-package app.dgandroid.eu.androidretrofit.Utils;
+package app.dgandroid.eu.androidretrofit.utils;
 
 /**
  * Created by Duilio on 19/04/2017.

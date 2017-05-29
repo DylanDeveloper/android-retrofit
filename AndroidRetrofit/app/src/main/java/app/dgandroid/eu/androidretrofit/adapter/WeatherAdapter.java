@@ -1,4 +1,4 @@
-package app.dgandroid.eu.androidretrofit.Adapter;
+package app.dgandroid.eu.androidretrofit.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,10 +10,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.List;
-import app.dgandroid.eu.androidretrofit.Activities.DayDetailsActivity;
-import app.dgandroid.eu.androidretrofit.Model.Day;
+import app.dgandroid.eu.androidretrofit.activities.DayDetailsActivity;
+import app.dgandroid.eu.androidretrofit.model.Day;
 import app.dgandroid.eu.androidretrofit.R;
-import app.dgandroid.eu.androidretrofit.Utils.Utility;
+import app.dgandroid.eu.androidretrofit.utils.Utility;
 
 /**
  * Created by Duilio on 20/04/2017.

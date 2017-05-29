@@ -1,4 +1,4 @@
-package app.dgandroid.eu.androidretrofit.Model;
+package app.dgandroid.eu.androidretrofit.model;
 
 import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;

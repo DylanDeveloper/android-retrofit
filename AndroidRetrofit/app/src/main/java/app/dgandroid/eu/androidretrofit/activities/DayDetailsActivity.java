@@ -1,4 +1,4 @@
-package app.dgandroid.eu.androidretrofit.Activities;
+package app.dgandroid.eu.androidretrofit.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,9 +6,9 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import app.dgandroid.eu.androidretrofit.Model.Day;
+import app.dgandroid.eu.androidretrofit.model.Day;
 import app.dgandroid.eu.androidretrofit.R;
-import app.dgandroid.eu.androidretrofit.Utils.Utility;
+import app.dgandroid.eu.androidretrofit.utils.Utility;
 
 public class DayDetailsActivity extends AppCompatActivity {
 
@@ -51,7 +51,7 @@ public class DayDetailsActivity extends AppCompatActivity {
 
         String dateDayNumber    = Utility.getTypeDateUnit(day.getDt(), Utility.DAY_NUMBER);
         String dateDayText      = Utility.getTypeDateUnit(day.getDt(), Utility.DAY_TEXT);
-        String monthDayText      = Utility.getTypeDateUnit(day.getDt(), Utility.MONTH_TEXT);
+        String monthDayText     = Utility.getTypeDateUnit(day.getDt(), Utility.MONTH_TEXT);
         dayNumber.setText(dateDayNumber);
         dayText.setText(dateDayText);
         monthText.setText(monthDayText);

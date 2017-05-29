@@ -1,18 +1,18 @@
-package app.dgandroid.eu.androidretrofit.Activities;
+package app.dgandroid.eu.androidretrofit.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import java.util.List;
-import app.dgandroid.eu.androidretrofit.Adapter.WeatherAdapter;
-import app.dgandroid.eu.androidretrofit.Model.Day;
-import app.dgandroid.eu.androidretrofit.Model.WeatherResponse;
+import app.dgandroid.eu.androidretrofit.adapter.WeatherAdapter;
+import app.dgandroid.eu.androidretrofit.model.Day;
+import app.dgandroid.eu.androidretrofit.model.WeatherResponse;
 import app.dgandroid.eu.androidretrofit.R;
-import app.dgandroid.eu.androidretrofit.Rest.ApiInterface;
-import app.dgandroid.eu.androidretrofit.Rest.Client;
-import app.dgandroid.eu.androidretrofit.Utils.Config;
-import app.dgandroid.eu.androidretrofit.Utils.Logger;
+import app.dgandroid.eu.androidretrofit.rest.ApiInterface;
+import app.dgandroid.eu.androidretrofit.rest.Client;
+import app.dgandroid.eu.androidretrofit.utils.Config;
+import app.dgandroid.eu.androidretrofit.utils.Logger;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
