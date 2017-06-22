@@ -10,10 +10,10 @@ import java.util.Date;
 
 public class Utility {
     //Mon Apr 24 11:00:00 GMT+02:00 2017
-    public static int DAY_TEXT      = 0;
-    public static int MONTH_TEXT    = 1;
-    public static int DAY_NUMBER    = 2;
-    public static int YEAR_NUMBER   = 5;
+    public static final int DAY_TEXT      = 0;
+    public static final int MONTH_TEXT    = 1;
+    public static final int DAY_NUMBER    = 2;
+    public static final int YEAR_NUMBER   = 5;
 
     public enum WeatherCondition {
         Thunderstorm,
@@ -65,9 +65,25 @@ public class Utility {
 
     public static String getTypeDateUnit(long dateTimeStamp, int TYPE){
         Date time = new Date(dateTimeStamp*1000);
-        String timeStampString = time.toString();
-        String[] timeStampArrayString = timeStampString.split(" ");
-        return timeStampArrayString[TYPE];
+        String timeString;
+        switch (TYPE) {
+            case DAY_TEXT:
+                timeString = (String) android.text.format.DateFormat.format("EEEE", time);//Thursday
+                break;
+            case DAY_NUMBER:
+                timeString = (String) android.text.format.DateFormat.format("dd", time); //20
+                break;
+            case MONTH_TEXT:
+                timeString = (String) android.text.format.DateFormat.format("MMM", time);//Jun
+                break;
+            case YEAR_NUMBER:
+                timeString = (String) android.text.format.DateFormat.format("yyyy", time);
+                break;
+            default:
+                timeString = "-9";
+                break;
+        }
+        return timeString;
     }
 
     public static Drawable getWeatherConditionBackground(Context context, String strWeatherCondition){ //Just for Testing
