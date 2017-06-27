@@ -9,7 +9,7 @@ import app.dgandroid.eu.androidretrofit.adapter.WeatherAdapter;
 import app.dgandroid.eu.androidretrofit.model.Day;
 import app.dgandroid.eu.androidretrofit.model.WeatherResponse;
 import app.dgandroid.eu.androidretrofit.R;
-import app.dgandroid.eu.androidretrofit.rest.ApiInterface;
+import app.dgandroid.eu.androidretrofit.rest.WeatherCallInterface;
 import app.dgandroid.eu.androidretrofit.rest.Client;
 import app.dgandroid.eu.androidretrofit.utils.Config;
 import app.dgandroid.eu.androidretrofit.utils.Logger;
@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.weather_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        ApiInterface apiInterface = Client.getClient().create(ApiInterface.class);
-        Call<WeatherResponse> call = apiInterface.getWeatherDays(CITY, Config.DAYS, UNIT_TYPE, Config.APP_KEY);
+        WeatherCallInterface weatherCallInterface = Client.getClient().create(WeatherCallInterface.class);
+        Call<WeatherResponse> call = weatherCallInterface.getWeatherDays(CITY, Config.DAYS, UNIT_TYPE, Config.APP_KEY);
         setTitle("7 Days Weather in " + CITY);
         call.enqueue(new Callback<WeatherResponse>() {
             @Override
