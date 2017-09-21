@@ -9,23 +9,5 @@ import java.util.List;
 
 public class WeatherResponse {
     @SerializedName ("list")
-    private List<Day> listDays;
-    @SerializedName("message")
-    private String message;
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public List<Day> getListDays() {
-        return listDays;
-    }
-
-    public void setListDays(List<Day> listDays) {
-        this.listDays = listDays;
-    }
+    public List<Day> listDays;
 }
