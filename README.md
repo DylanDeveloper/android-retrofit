@@ -1,2 +1,2 @@
 # android-retrofit
-Sample project using Android Retrofit and GSON
+Sample project using Android Retrofit, GSON and MVVM pattern!
