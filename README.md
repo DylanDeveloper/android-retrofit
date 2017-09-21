@@ -1,2 +1,3 @@
 # android-retrofit
-Sample project using Android Retrofit, GSON and MVVM pattern!
+
+Sample Anroid project using Retrofit - GSON- MVVM (Model-View-ViewModel) - Android Data Binding
